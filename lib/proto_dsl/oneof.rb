@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ProtoDsl
+  # Oneof class
   class Oneof
     attr_reader :name, :fields
 

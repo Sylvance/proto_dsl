@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ProtoDsl
+  # Rpc class
   class Rpc
     attr_reader :name, :request_type, :response_type, :options
 
@@ -40,4 +41,4 @@ end
 # -> option: defines a new option for the RPC service with the given name and value
 # -> to_proto: generates the protobuf code for the RPC service, and returns the generated code as a string.
 
-# The to_proto method generates the protobuf code for the RPC service by concatenating the name, request_type, and response_type of the RPC service, the options in the options array as protobuf code, and a closing } character. 
+# The to_proto method generates the protobuf code for the RPC service by concatenating the name, request_type, and response_type of the RPC service, the options in the options array as protobuf code, and a closing } character.

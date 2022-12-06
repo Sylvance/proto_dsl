@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ProtoDsl
+  # Enum class
   class Enum
     attr_reader :name, :values
 

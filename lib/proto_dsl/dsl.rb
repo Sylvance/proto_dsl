@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "./message"
 require_relative "./enum"
 require_relative "./service"
@@ -5,7 +7,7 @@ require_relative "./service"
 module ProtoDsl
   class Dsl
     attr_reader :services, :messages, :enums, :options, :imports, :syntax, :package
-  
+
     def initialize
       @services = []
       @messages = []
@@ -15,45 +17,45 @@ module ProtoDsl
       @syntax = "proto2"
       @package = ""
     end
-  
+
     def service(name, &block)
       service = Service.new(name)
       service.instance_eval(&block)
       @services << service
     end
-  
+
     def message(name, &block)
       message = Message.new(name)
       message.instance_eval(&block)
       @messages << message
     end
-  
+
     def enum(name, &block)
       enum = Enum.new(name)
       enum.instance_eval(&block)
       @enums << enum
     end
-  
+
     def syntax(version)
       @syntax = version
     end
-  
+
     def package(name)
       @package = name
     end
-  
+
     def option(name, value)
       @options << [name, value]
     end
-  
+
     def import(path)
       @imports << path
     end
-  
+
     def to_proto
-      output = ""
+      output = +""
       output << "syntax = \"#{@syntax}\";\n"
-      output << "package #{@package};\n" if !@package.empty?
+      output << "package #{@package};\n" unless @package.empty?
       @imports.each do |path|
         output << "import \"#{path}\";\n"
       end

@@ -11,12 +11,12 @@ RSpec.describe ProtoDsl::Dsl do
       end
 
       expected_proto = <<~PROTO
-      syntax = "proto2";
-      service MyService {
-        rpc my_rpc (MyRequest) returns (MyResponse) {
-          option my_option = value;
+        syntax = "proto2";
+        service MyService {
+          rpc my_rpc (MyRequest) returns (MyResponse) {
+            option my_option = value;
+          }
         }
-      }
       PROTO
 
       expect(dsl.to_proto).to eq(expected_proto)

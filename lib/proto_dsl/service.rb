@@ -3,6 +3,7 @@
 require_relative "./rpc"
 
 module ProtoDsl
+  # Service class
   class Service
     attr_reader :name, :rpcs
 

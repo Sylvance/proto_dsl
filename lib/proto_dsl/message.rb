@@ -4,6 +4,7 @@ require_relative "./enum"
 require_relative "./oneof"
 
 module ProtoDsl
+  # Message class
   class Message
     attr_reader :name, :fields, :messages, :enums, :oneofs
 
