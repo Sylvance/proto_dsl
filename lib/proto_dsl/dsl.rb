@@ -5,6 +5,7 @@ require_relative "./enum"
 require_relative "./service"
 
 module ProtoDsl
+  # Dsl class
   class Dsl
     attr_reader :services, :messages, :enums, :options, :imports, :syntax, :package
 
