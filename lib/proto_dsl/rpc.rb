@@ -24,6 +24,14 @@ module ProtoDsl
       output << "  }\n"
       output
     end
+
+    def to_server_code
+      "  def #{@name}(request: #{@request_type}, context: ServerContext)\n" \
+        "    # TODO: implement server logic for #{@name} RPC method\n" \
+        "    response = #{@response_type}()\n" \
+        "    return response\n" \
+        "  end\n"
+    end
   end
 end
 

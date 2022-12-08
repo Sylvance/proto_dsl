@@ -74,6 +74,14 @@ module ProtoDsl
       end
       output
     end
+
+    def to_server_code
+      output = +""
+      @services.each do |service|
+        output << service.to_server_code
+      end
+      output
+    end
   end
 end
 

@@ -26,5 +26,13 @@ module ProtoDsl
       output << "}\n"
       output
     end
+
+    def to_server_code
+      output = +""
+      @rpcs.each do |rpc|
+        output << rpc.to_server_code
+      end
+      output
+    end
   end
 end
